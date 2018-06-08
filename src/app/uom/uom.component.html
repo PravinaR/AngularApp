@@ -1,0 +1,32 @@
+<h1>UOM</h1>
+<div >
+    Symbol:<input type="text" [(ngModel)]="uom.Symbol"><br/><br/>
+
+    Formal Name:<input type="text" title="Name" [(ngModel)]="uom.FormalName">
+</div>
+<div>
+  <br/>
+</div>
+<div>
+    <button (click)="Save()">Save</button>
+    <button (click)="Delete(uom.id)">Delete</button>
+    <button (click)="Clear()">Clear</button>
+</div>
+
+<table>
+  <thead>
+    <th>
+      Symbol
+    </th>
+    <th>
+      Name
+    </th>
+  </thead>
+  <tbody *ngFor="let d of s1.uomList">
+      <tr (click)="Edit(d)">
+       <td>{{d.Symbol}}</td>
+       <td>{{d.FormalName}}</td>
+        </tr>
+  </tbody>
+
+</table>
